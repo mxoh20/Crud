@@ -21,7 +21,7 @@
         </div>
 
         <div class="py-2">
-            <a href="{{route('create.edit',$user->id)}}" class="bg-green-400 w-1/2  px-4 py-2 rounded-lg">update</a>
+            <a href="{{route('create.edit',$user->id)}}" class="bg-green-400 w-1/2  px-4 py-2 rounded-lg">Update</a>
         </div>
 
     @endsection

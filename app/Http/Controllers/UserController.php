@@ -82,10 +82,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         User::findOrFail($id)->update($request->all());
 
-        return Response('updated');
+        return redirect()->route('create.show', [$id]);
     }
 
     /**
@@ -97,9 +96,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         //Deleting user by id
-
         User::destroy($id);
 
-        return "User has been deleted";
+        return redirect()->route('create.index')->with('status','User has been deleted');
     }
 }
