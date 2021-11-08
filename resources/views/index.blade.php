@@ -8,7 +8,7 @@
         </div>
 
         <div class="">
-    <table class="table-auto border-separate w-full">
+    <table class="table-auto border-separate w-full font-extrabold ">
 <tr class="text-left">
         <th>Name</th>
         <th>Surname</th>

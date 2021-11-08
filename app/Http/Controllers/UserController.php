@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreFormRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -37,9 +38,10 @@ class UserController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(StoreFormRequest $request)
     {
-        User::create($request->all());
+
+        User::create($request->validated());
 
    return redirect()->route('create.index')->with('success','User successful registered');
     }
