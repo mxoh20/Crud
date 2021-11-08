@@ -1,14 +1,13 @@
 <x-layout>
 
     @section('content')
-
-        <a class="bg-green-400 px-4 py-2" href="{{route('create.create')}}">create</a>
-        <div class="bg-green-400 ">
+        <div class="bg-green-300">
             {{Session('success')}}
         </div>
-
-
-    <table class="table-auto border-separate w-full">
+    <div class="m-4">
+        <a class="bg-green-500 px-4 py-2 rounded text-red-50" href="{{route('create.create')}}">Create</a>
+    </div>
+        <table class="table-auto border-separate w-full">
 <tr class="text-left">
         <th>Name</th>
         <th>Surname</th>
@@ -27,12 +26,12 @@
             <td>{{$user->created_at->diffForHumans()}}</td>
             <td>{{$user->updated_at->diffForHumans()}}</td>
             <td><a href="{{route('create.show',$user->id)}}">
-                    <span class="bg-blue-400 p-2 rounded">Show</span></a></td>
+                    <span class="bg-blue-500 p-2 rounded text-red-50">Show</span></a></td>
 
             <form action="{{route('create.destroy',$user->id)}}" method="post">
                 @csrf @method('DELETE')
             <td>
-                <input type="submit" value="Delete" class="bg-red-500 p-2 rounded">
+                <input type="submit" value="Delete" class="bg-red-600 p-2 text-red-50 rounded">
             </td>
             </form>
             </tr>
@@ -40,7 +39,7 @@
     @endforeach
 
     </table>
-           <div class="mt-4"> {{$users->links()}}</div>
+        <div class="mt-4"> {{$users->links()}}</div>
 
     @endsection
 </x-layout>
