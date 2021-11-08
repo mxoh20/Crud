@@ -17,8 +17,8 @@ class UserController extends Controller
     public function index()
     {
         //
-        $users=User::paginate(10);
-        return view('index',compact('users'));
+        $users = User::paginate(10);
+        return view('index', compact('users'));
     }
 
     /**
@@ -43,26 +43,26 @@ class UserController extends Controller
 
         User::create($request->validated());
 
-   return redirect()->route('create.index')->with('success','User successful registered');
+        return redirect()->route('create.index')->with('success', 'User successful registered');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|Response
      */
     public function show($id)
     {
         //
 
-        return view('show',['user'=>User::findOrFail($id)]);
+        return view('show', ['user' => User::findOrFail($id)]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|Response
      */
     public function edit($id)
@@ -70,14 +70,14 @@ class UserController extends Controller
         //
 
 
-    return view('edit',['user'=>User::findOrFail($id)]);
+        return view('edit', ['user' => User::findOrFail($id)]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function update(Request $request, $id)
@@ -90,7 +90,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function destroy($id)
@@ -98,6 +98,6 @@ class UserController extends Controller
         //Deleting user by id
         User::destroy($id);
 
-        return redirect()->route('create.index')->with('status','User has been deleted');
+        return redirect()->route('create.index')->with('status', 'User has been deleted');
     }
 }

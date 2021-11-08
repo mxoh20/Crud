@@ -10,7 +10,8 @@
 
             <div class="py-2">
                 <label class="block">
-                    <input type="text" name="name" value="{{$user->name}}" class="form-input px-4 py-3 mt-1 block w-1/2 border" autofocus>
+                    <input type="text" name="name" value="{{$user->name}}"
+                           class="form-input px-4 py-3 mt-1 block w-1/2 border" autofocus>
                 </label>
                 @error('name')
                 <span class="text-red-500">{{$message}}</span>
@@ -19,7 +20,8 @@
 
             <div class="py-2">
                 <label class="block">
-                    <input type="text" name="surname" value="{{$user->surname}}" class="form-input px-4 py-3 rounded-4 w-1/2 border">
+                    <input type="text" name="surname" value="{{$user->surname}}"
+                           class="form-input px-4 py-3 rounded-4 w-1/2 border">
                 </label>
                 @error('surname')
                 <span class="text-red-500">{{$message}}</span>
@@ -28,7 +30,8 @@
 
             <div class="py-2">
                 <label class="block">
-                    <input type="email" name="email" value="{{$user->email}}" class="form-input px-4 py-3 rounded-4 w-1/2 border">
+                    <input type="email" name="email" value="{{$user->email}}"
+                           class="form-input px-4 py-3 rounded-4 w-1/2 border">
                 </label>
                 @error('email')
                 <span class="text-red-500">{{$message}}</span>
@@ -36,7 +39,7 @@
             </div>
 
             <div class="py-2">
-                <input type="submit" value="Edit" class="bg-green-400 w-1/2  px-4 py-2 rounded-lg">
+                <input type="submit" value="Update" class="bg-green-400 w-1/2  px-4 py-2 rounded-lg">
             </div>
 
         </form>
